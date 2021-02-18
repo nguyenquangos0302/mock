@@ -16,10 +16,10 @@ public class NavigationEntity extends BaseEntity {
     @Column(name = "parentid")
     private Long parentId;
 
-    @Column(name = "icon", columnDefinition = "varchar(255) default fab fa-battle-net")
+    @Column(name = "icon", columnDefinition = "varchar(255) default 'fab fa-battle-net'")
     private String icon;
 
-    @Column(name = "url", columnDefinition = "varchar(255)", unique=true)
+    @Column(name = "url", columnDefinition = "varchar(200)", unique = true)
     private String url;
 
 }

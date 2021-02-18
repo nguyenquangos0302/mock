@@ -5,11 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class NavigationModel {
 
     private Long id;
@@ -28,9 +28,9 @@ public class NavigationModel {
 
     private String modifiedBy;
 
-    private Date createdDate;
+    private LocalDate createdDate;
 
-    private Date modifiedDate;
+    private LocalDate modifiedDate;
 
     public NavigationModel(String name, String url) {
         this.name = name;
@@ -50,4 +50,28 @@ public class NavigationModel {
         this.url = url;
     }
 
+    public NavigationModel(Long id, String name, String icon, String url, int status, String createdBy, String modifiedBy, LocalDate createdDate, LocalDate modifiedDate) {
+        this.id = id;
+        this.name = name;
+        this.icon = icon;
+        this.url = url;
+        this.status = status;
+        this.createdBy = createdBy;
+        this.modifiedBy = modifiedBy;
+        this.createdDate = createdDate;
+        this.modifiedDate = modifiedDate;
+    }
+
+    public NavigationModel(Long id, String name, Long parentId, String icon, String url, int status, String createdBy, String modifiedBy, LocalDate createdDate, LocalDate modifiedDate) {
+        this.id = id;
+        this.name = name;
+        this.parentId = parentId;
+        this.icon = icon;
+        this.url = url;
+        this.status = status;
+        this.createdBy = createdBy;
+        this.modifiedBy = modifiedBy;
+        this.createdDate = createdDate;
+        this.modifiedDate = modifiedDate;
+    }
 }

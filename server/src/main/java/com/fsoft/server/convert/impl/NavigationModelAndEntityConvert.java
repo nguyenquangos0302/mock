@@ -1,22 +1,22 @@
 package com.fsoft.server.convert.impl;
 
-import com.fsoft.server.convert.IConvertData;
+import com.fsoft.server.convert.IConvertModelAndEntityData;
 import com.fsoft.server.entity.NavigationEntity;
 import com.fsoft.server.model.NavigationModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class NavigationConvert implements IConvertData<NavigationModel, NavigationEntity> {
+public class NavigationModelAndEntityConvert implements IConvertModelAndEntityData<NavigationModel, NavigationEntity> {
 
     private final ModelMapper modelMapper;
 
     @Autowired
-    public NavigationConvert() {
+    public NavigationModelAndEntityConvert() {
         modelMapper = new ModelMapper();
     }
 
     @Override
-    public NavigationModel convertToDtoOrModel(NavigationEntity tObject) {
+    public NavigationModel convertToModel(NavigationEntity tObject) {
         NavigationModel navigationModel = modelMapper.map(tObject, NavigationModel.class);
         return navigationModel;
     }

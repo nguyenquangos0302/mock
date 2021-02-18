@@ -2,9 +2,9 @@ package com.fsoft.server.convert;
 
 import java.util.function.Function;
 
-public interface IConvertData<E,T> extends Function<E, T> {
+public interface IConvertModelAndEntityData<E,T> extends Function<E, T> {
 
-    E convertToDtoOrModel(T tObject);
+    E convertToModel(T tObject);
 
     T convertToEntity(E tObject);
 
