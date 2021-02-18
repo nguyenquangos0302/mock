@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header class="container-fluid header" th:fragment="header">
+		<div class="container-fluid header__main">
+			<div class="container header__component">
+				<div class="header__logo">
+					<a href="#"> <i class="fas fa-leaf header__icon"></i>
+					</a>
+				</div>
+				<div class="header__search">
+					<form>
+						<input type="text" class="form-control header__form"
+							placeholder="Search ..." />
+					</form>
+					<span> <i
+						class="fas fa-search header__icon header__icon--search"></i>
+					</span>
+				</div>
+				<div class="header__social">
+					<ul>
+						<li><a href="#" class="header__social-link"> <i
+								class="fab fa-facebook-f header__icon header__icon--social"></i>
+						</a></li>
+						<li><a href="#" class="header__social-link"> <i
+								class="fab fa-youtube header__icon header__icon--social"></i>
+						</a></li>
+						<li><a href="#" class="header__social-link"> <i
+								class="fab fa-twitter header__icon header__icon--social"></i>
+						</a></li>
+						<li><a href="#" class="header__social-link"> <i
+								class="fab fa-skype header__icon header__icon--social"></i>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+</body>
+</html>
