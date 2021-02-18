@@ -1,6 +1,6 @@
 package com.fsoft.server.data;
 
-import com.fsoft.server.convert.impl.NavigationConvert;
+import com.fsoft.server.convert.impl.NavigationModelAndEntityConvert;
 import com.fsoft.server.entity.NavigationEntity;
 import com.fsoft.server.model.NavigationModel;
 import com.fsoft.server.repository.INavagationRepository;
@@ -42,17 +42,17 @@ public class DataConfig {
             NavigationModel oopNavigationModel = new NavigationModel(10L, "oop", 5L, "fab fa-battle-net", "/java/java-core/oop", 1, "system", "system", LocalDate.now(), LocalDate.now());
 
             // convert data from navigation-model to navigation-entity
-            NavigationEntity homeNavigationEntity = new NavigationConvert().convertToEntity(homeNavigationModel);
-            NavigationEntity javaNavigationEntity = new NavigationConvert().convertToEntity(javaNavigationModel);
-            NavigationEntity frameworksNavigationEntity = new NavigationConvert().convertToEntity(frameworksNavigationModel);
-            NavigationEntity hibernateNavigationEntity = new NavigationConvert().convertToEntity(hibernateNavigationModel);
-            NavigationEntity javaCoreNavigationEntity = new NavigationConvert().convertToEntity(javaCoreNavigationModel);
-            NavigationEntity javaIONavigationEntity = new NavigationConvert().convertToEntity(javaIONavigationModel);
-            NavigationEntity springCoreNavigationEntity = new NavigationConvert().convertToEntity(springCoreNavigationModel);
-            NavigationEntity springMVCNavigationEntity = new NavigationConvert().convertToEntity(springMVCNavigationModel);
-            NavigationEntity springBootNavigationEntity = new NavigationConvert().convertToEntity(springBootNavigationModel);
-            NavigationEntity relationshipNavigationEntity = new NavigationConvert().convertToEntity(relationshipNavigationModel);
-            NavigationEntity oopNavigationEntity = new NavigationConvert().convertToEntity(oopNavigationModel);
+            NavigationEntity homeNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(homeNavigationModel);
+            NavigationEntity javaNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(javaNavigationModel);
+            NavigationEntity frameworksNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(frameworksNavigationModel);
+            NavigationEntity hibernateNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(hibernateNavigationModel);
+            NavigationEntity javaCoreNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(javaCoreNavigationModel);
+            NavigationEntity javaIONavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(javaIONavigationModel);
+            NavigationEntity springCoreNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(springCoreNavigationModel);
+            NavigationEntity springMVCNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(springMVCNavigationModel);
+            NavigationEntity springBootNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(springBootNavigationModel);
+            NavigationEntity relationshipNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(relationshipNavigationModel);
+            NavigationEntity oopNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(oopNavigationModel);
 
             // add data
             list.add(homeNavigationEntity);
