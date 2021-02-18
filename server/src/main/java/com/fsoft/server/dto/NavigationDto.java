@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class NavigationDto {
 
+    private Long id;
+
     private String name;
 
     private Long parentId;

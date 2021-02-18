@@ -1,196 +1,132 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
 </head>
+
 <body>
 	<nav class="container-fluid nav" th:fragment="nav">
 		<div class="container nav__container">
 			<ul class="nav__ul">
-				<li class="nav__li"><a class="nav__link" href="#"> <i
-						class="fas fa-home"></i>
-				</a></li>
+				<li class="nav__li"><a class="nav__link" href="#"> <i class="fas fa-home"></i>
+					</a></li>
 				<li class="nav__li"><a href="#" class="nav__link">lap trinh</a>
 					<div class="nav__submenu">
 						<ul class="nav__submenu-ul">
-							<li class="nav__submenu-li"><a href="#"
-								class="nav__submenu-link">Programming</a>
+							<li class="nav__submenu-li"><a href="#" class="nav__submenu-link">Programming</a>
 								<div class="nav__support">
 									<ul class="nav__support-ul">
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Python</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Java</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Pascal</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C#</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Ruby</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Swift</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C/C++</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Kotlin</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Golang</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Giai thuat</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Visual Basic</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Python</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Java</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Pascal</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C#</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Ruby</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Swift</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C/C++</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Kotlin</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Golang</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Giai thuat</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Visual Basic</a></li>
 									</ul>
-								</div></li>
-							<li class="nav__submenu-li"><a href="#"
-								class="nav__submenu-link">Web Frontend</a>
+								</div>
+							</li>
+							<li class="nav__submenu-li"><a href="#" class="nav__submenu-link">Web Frontend</a>
 								<div class="nav__support">
 									<ul class="nav__support-ul">
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Python</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Java</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Pascal</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C#</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Ruby</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Swift</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C/C++</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Kotlin</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Golang</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Giai thuat</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Visual Basic</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Python</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Java</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Pascal</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C#</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Ruby</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Swift</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C/C++</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Kotlin</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Golang</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Giai thuat</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Visual Basic</a></li>
 									</ul>
-								</div></li>
-							<li class="nav__submenu-li"><a href="#"
-								class="nav__submenu-link">Web Backend</a>
+								</div>
+							</li>
+							<li class="nav__submenu-li"><a href="#" class="nav__submenu-link">Web Backend</a>
 								<div class="nav__support">
 									<ul class="nav__support-ul">
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Python</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Java</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Pascal</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C#</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Ruby</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Swift</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C/C++</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Kotlin</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Golang</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Giai thuat</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Visual Basic</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Python</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Java</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Pascal</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C#</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Ruby</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Swift</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C/C++</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Kotlin</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Golang</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Giai thuat</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Visual Basic</a></li>
 									</ul>
-								</div></li>
-							<li class="nav__submenu-li"><a href="#"
-								class="nav__submenu-link">Mobile Dev</a>
+								</div>
+							</li>
+							<li class="nav__submenu-li"><a href="#" class="nav__submenu-link">Mobile Dev</a>
 								<div class="nav__support">
 									<ul class="nav__support-ul">
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Python</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Java</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Pascal</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C#</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Ruby</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Swift</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C/C++</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Kotlin</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Golang</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Giai thuat</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Visual Basic</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Python</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Java</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Pascal</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C#</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Ruby</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Swift</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C/C++</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Kotlin</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Golang</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Giai thuat</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Visual Basic</a></li>
 									</ul>
-								</div></li>
-							<li class="nav__submenu-li"><a href="#"
-								class="nav__submenu-link">Database</a>
+								</div>
+							</li>
+							<li class="nav__submenu-li"><a href="#" class="nav__submenu-link">Database</a>
 								<div class="nav__support">
 									<ul class="nav__support-ul">
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Python</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Java</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Pascal</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C#</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Ruby</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Swift</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C/C++</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Kotlin</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Golang</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Giai thuat</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Visual Basic</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Python</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Java</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Pascal</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C#</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Ruby</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Swift</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C/C++</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Kotlin</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Golang</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Giai thuat</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Visual Basic</a></li>
 									</ul>
-								</div></li>
-							<li class="nav__submenu-li"><a href="#"
-								class="nav__submenu-link">Cong cu</a>
+								</div>
+							</li>
+							<li class="nav__submenu-li"><a href="#" class="nav__submenu-link">Cong cu</a>
 								<div class="nav__support">
 									<ul class="nav__support-ul">
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Python</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Java</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Pascal</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C#</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Ruby</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Swift</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">C/C++</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Kotlin</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Golang</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Giai thuat</a></li>
-										<li class="nav__support-li"><a href="#"
-											class="nav__support-link">Visual Basic</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Python</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Java</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Pascal</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C#</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Ruby</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Swift</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">C/C++</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Kotlin</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Golang</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Giai thuat</a></li>
+										<li class="nav__support-li"><a href="#" class="nav__support-link">Visual Basic</a></li>
 									</ul>
-								</div></li>
+								</div>
+							</li>
 						</ul>
-					</div></li>
+					</div>
+				</li>
 				<li class="nav__li"><a href="#" class="nav__link">video</a>
 					<div class="nav__submenu">
 						<ul class="nav__submenu-ul">
-							<li class="nav__submenu-li"><a href="#"
-								class="nav__submenu-link">Programming</a></li>
+							<li class="nav__submenu-li"><a href="#" class="nav__submenu-link">Programming</a></li>
 						</ul>
-					</div></li>
+					</div>
+				</li>
 				<li class="nav__li"><a href="#" class="nav__link">khoa hoc</a>
 				</li>
 				<li class="nav__li"><a href="#" class="nav__link">Webmaster</a>
@@ -203,11 +139,11 @@
 				<li class="nav__li"><a href="#" class="nav__link">Thu thuat</a>
 				</li>
 				<li class="nav__li"><a href="#" class="nav__link">Mon hoc</a></li>
-				<li class="nav__li"><a href="#" class="nav__link"> <i
-						class="fas fa-layer-group"></i>
-				</a></li>
+				<li class="nav__li"><a href="#" class="nav__link"> <i class="fas fa-layer-group"></i>
+					</a></li>
 			</ul>
 		</div>
 	</nav>
 </body>
+
 </html>
