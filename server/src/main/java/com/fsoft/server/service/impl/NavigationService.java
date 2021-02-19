@@ -6,6 +6,7 @@ import com.fsoft.server.dto.NavigationDto;
 import com.fsoft.server.repository.INavagationRepository;
 import com.fsoft.server.service.INavigationService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class NavigationService implements INavigationService {
     public List<NavigationDto> finalAll() {
         List<NavigationDto> list = new ArrayList<NavigationDto>();
         list = navagationRepository
-                                    .findAll()
+                                    .findAll(Sort.by("parentId").ascending())
                                     .stream()
                                     .map(element -> new NavigationDtoAndEntityConvert().convertToDto(element))
                                     .collect(Collectors.toList());
