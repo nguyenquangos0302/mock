@@ -3,21 +3,22 @@ const templateSimple = (data, path) => {
 };
 
 const renderMenu = (datas, ulParent, path) => {
-  ulParent.innerHTML = "";
+  ulParent.innerHTML = '';
   datas.forEach((data) => {
     if (data.parentId === 0) {
-      let li = document.createElement("li");
-      li.classList.add("nav__li");
+      let li = document.createElement('li');
+      li.classList.add('nav__li');
       let templateData = templateSimple(data, path);
       li.innerHTML = templateData;
       ulParent.appendChild(li);
     } else {
-      let layer = 1;
+      let layer = 0;
       let parent = data; // parent
       let dataCurrent = data; // current
       while (true) {
-        console.log(dataCurrent.id + " - " + parent.parentId);
+        console.log(dataCurrent.id + ' - ' + parent.parentId);
         if (parent.parentId !== 0) {
+          layer++;
           parent = datas.find((data) => data.id === parent.parentId); // lay len
           dataCurrent = datas.find((data) => data.id === parent.id); // thang tren no 1 bac
         } else {
@@ -25,26 +26,26 @@ const renderMenu = (datas, ulParent, path) => {
         }
       }
 
-      const liHtml = document.querySelectorAll(".nav__ul .nav__li");
-      let divSub = document.createElement("ul");
+      //const liHtml = document.querySelectorAll(".nav__ul .nav__li");
+      //let divSub = document.createElement("ul");
 
-      liHtml[data.parentId - 1].textContent += data.name;
+      //liHtml[data.parentId - 1].textContent += data.name;
     }
   });
 };
 
 async function getData() {
   // dom
-  const ulParent = document.querySelector(".nav__ul");
+  const ulParent = document.querySelector('.nav__ul');
 
   // get data
   const responseNavigation = await fetch(
-    "http://localhost:8080/CourseOnline/client/api/v1/navigation"
+    'http://localhost:8080/CourseOnline/client/api/v1/navigation'
   );
   const navigation = await responseNavigation.json();
 
   const responsePath = await fetch(
-    "http://localhost:8080/CourseOnline/client/api/v1/path"
+    'http://localhost:8080/CourseOnline/client/api/v1/path'
   );
   const path = await responsePath.json();
 
@@ -52,7 +53,7 @@ async function getData() {
   if (navigation.length > 0) {
     renderMenu(navigation, ulParent, path);
   } else {
-    ulParent.innerHTML = "";
+    ulParent.innerHTML = '';
   }
 }
 
