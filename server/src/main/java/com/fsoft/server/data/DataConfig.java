@@ -39,7 +39,7 @@ public class DataConfig {
             NavigationModel relationshipNavigationModel = new NavigationModel(10L, "relationship", 4L, "fab fa-battle-net", "/hibernate/relationship", 1, "system", "system", LocalDate.now(), LocalDate.now());
 
             // children - java core - children
-            NavigationModel oopNavigationModel = new NavigationModel(10L, "oop", 5L, "fab fa-battle-net", "/java/java-core/oop", 1, "system", "system", LocalDate.now(), LocalDate.now());
+            NavigationModel oopNavigationModel = new NavigationModel(11L, "oop", 5L, "fab fa-battle-net", "/java/java-core/oop", 1, "system", "system", LocalDate.now(), LocalDate.now());
 
             // convert data from navigation-model to navigation-entity
             NavigationEntity homeNavigationEntity = new NavigationModelAndEntityConvert().convertToEntity(homeNavigationModel);
