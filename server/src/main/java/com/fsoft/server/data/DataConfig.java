@@ -21,10 +21,10 @@ public class DataConfig {
             List<NavigationEntity> list = new ArrayList<NavigationEntity>();
 
 //          // parent
-            NavigationModel homeNavigationModel = new NavigationModel(1L, "home", "fab fa-battle-net",  "/", 1, "system", "system", LocalDate.now(), LocalDate.now());
-            NavigationModel javaNavigationModel = new NavigationModel(2L, "java", "fab fa-battle-net", "/java", 1, "system", "system", LocalDate.now(), LocalDate.now());
-            NavigationModel frameworksNavigationModel = new NavigationModel(3L, "frameworks", "fab fa-battle-net", "/frameworks", 1, "system", "system", LocalDate.now(), LocalDate.now());
-            NavigationModel hibernateNavigationModel = new NavigationModel(4L, "hibernate", "fab fa-battle-net", "/hibernate", 1, "system", "system", LocalDate.now(), LocalDate.now());
+            NavigationModel homeNavigationModel = new NavigationModel(1L, "home", 0L, "fab fa-battle-net",  "/", 1, "system", "system", LocalDate.now(), LocalDate.now());
+            NavigationModel javaNavigationModel = new NavigationModel(2L, "java", 0L, "fab fa-battle-net", "/java", 1, "system", "system", LocalDate.now(), LocalDate.now());
+            NavigationModel frameworksNavigationModel = new NavigationModel(3L, "frameworks", 0L, "fab fa-battle-net", "/frameworks", 1, "system", "system", LocalDate.now(), LocalDate.now());
+            NavigationModel hibernateNavigationModel = new NavigationModel(4L, "hibernate", 0L, "fab fa-battle-net", "/hibernate", 1, "system", "system", LocalDate.now(), LocalDate.now());
 
             // children - java
             NavigationModel javaCoreNavigationModel = new NavigationModel(5L, "java core", 2L, "fab fa-battle-net", "/java/java-core", 1, "system", "system", LocalDate.now(), LocalDate.now());
