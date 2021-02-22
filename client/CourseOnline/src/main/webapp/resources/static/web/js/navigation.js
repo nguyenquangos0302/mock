@@ -3,7 +3,7 @@ const templateSimple = (data, path) => {
 };
 
 const templateSub = (data, path) => {
-  let name = getNameFromUrl(data);
+  let name = getNameFromUrl(data).nameUrl;
   return `<li class="nav__submenu-li nav__li nav__${name}">
       <a href="${path.path}${data.url}" class="nav__submenu-link">
         ${data.name}
@@ -12,17 +12,23 @@ const templateSub = (data, path) => {
 };
 
 const getNameFromUrl = (data) => {
-  let name = data.url.split('/');
+  const objUrlLayer = {
+    nameUrl: "",
+    layer: "",
+  };
+  let name = data.url.split("/");
+  objUrlLayer.layer = name.length;
   name = name[name.length - 1];
-  return name;
+  objUrlLayer.nameUrl = name;
+  return objUrlLayer;
 };
 
 const renderMenu = (datas, ulParent, path) => {
-  ulParent.innerHTML = '';
+  ulParent.innerHTML = "";
   datas.forEach((data) => {
     if (data.parentId === 0) {
-      let li = document.createElement('li');
-      li.classList.add('nav__li', `nav__${data.name}`);
+      let li = document.createElement("li");
+      li.classList.add("nav__li", `nav__${data.name}`);
       let templateData = templateSimple(data, path);
       li.innerHTML = templateData;
       ulParent.appendChild(li);
@@ -38,13 +44,14 @@ const renderMenu = (datas, ulParent, path) => {
 
     if (children.length > 0) {
       let parent = datas.find((data) => data.id === children[0].parentId);
-      let name = getNameFromUrl(parent);
+      let name = getNameFromUrl(parent).nameUrl;
+      let layer = getNameFromUrl(parent).layer;
       const liHtml = document.querySelector(`.nav__ul .nav__li.nav__${name}`);
-      let divSub = document.createElement('div');
-      divSub.classList.add('nav__submenu');
-      let ulSub = document.createElement('ul');
-      ulSub.classList.add('nav__ul');
-      ulSub.innerHTML = '';
+      let divSub = document.createElement("div");
+      divSub.classList.add("nav__submenu", `nav__layer-${layer}`);
+      let ulSub = document.createElement("ul");
+      ulSub.classList.add("nav__ul");
+      ulSub.innerHTML = "";
       for (let i = 0; i < children.length; ++i) {
         let templateSubData = templateSub(children[i], path);
         ulSub.innerHTML += templateSubData;
@@ -57,16 +64,16 @@ const renderMenu = (datas, ulParent, path) => {
 
 async function getData() {
   // dom
-  const ulParent = document.querySelector('.nav__ul');
+  const ulParent = document.querySelector(".nav__ul");
 
   // get data
   const responseNavigation = await fetch(
-    'http://localhost:8080/CourseOnline/client/api/v1/navigation'
+    "http://localhost:8080/CourseOnline/client/api/v1/navigation"
   );
   const navigation = await responseNavigation.json();
 
   const responsePath = await fetch(
-    'http://localhost:8080/CourseOnline/client/api/v1/path'
+    "http://localhost:8080/CourseOnline/client/api/v1/path"
   );
   const path = await responsePath.json();
 
@@ -74,7 +81,7 @@ async function getData() {
   if (navigation.length > 0) {
     renderMenu(navigation, ulParent, path);
   } else {
-    ulParent.innerHTML = '';
+    ulParent.innerHTML = "";
   }
 }
 
