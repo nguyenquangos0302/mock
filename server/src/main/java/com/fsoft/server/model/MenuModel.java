@@ -14,8 +14,6 @@ public class MenuModel {
 
     private String name;
 
-    private Long parentId;
-
     private String icon;
 
     private String url;
@@ -41,37 +39,5 @@ public class MenuModel {
         this.id = id;
         this.name = name;
         this.url = url;
-    }
-
-    public MenuModel(Long id, String name, Long parentId, String url) {
-        this.id = id;
-        this.name = name;
-        this.parentId = parentId;
-        this.url = url;
-    }
-
-    public MenuModel(Long id, String name, String icon, String url, int status, String createdBy, String modifiedBy, LocalDate createdDate, LocalDate modifiedDate) {
-        this.id = id;
-        this.name = name;
-        this.icon = icon;
-        this.url = url;
-        this.status = status;
-        this.createdBy = createdBy;
-        this.modifiedBy = modifiedBy;
-        this.createdDate = createdDate;
-        this.modifiedDate = modifiedDate;
-    }
-
-    public MenuModel(Long id, String name, String icon, String url, int status, String createdBy, String modifiedBy, LocalDate createdDate, LocalDate modifiedDate, Long parentId) {
-        this.id = id;
-        this.name = name;
-        this.icon = icon;
-        this.url = url;
-        this.status = status;
-        this.createdBy = createdBy;
-        this.modifiedBy = modifiedBy;
-        this.createdDate = createdDate;
-        this.modifiedDate = modifiedDate;
-        this.parentId = parentId;
     }
 }
