@@ -13,8 +13,8 @@ public class HomeController {
 	@GetMapping("")
 	public ModelAndView home(Model model) {
 		ModelAndView mav = new ModelAndView("web/index");
-		model.addAttribute("message", "hello");
 		return mav;
 	}
 
 }
+	
