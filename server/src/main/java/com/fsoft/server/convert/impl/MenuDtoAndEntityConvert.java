@@ -24,8 +24,8 @@ public class MenuDtoAndEntityConvert implements IConvertDtoAndEntityData<MenuDto
 
     @Override
     public MenuEntity convertToEntity(MenuDto tObject) {
-        MenuEntity navigationEntity = modelMapper.map(tObject, MenuEntity.class);
-        return navigationEntity;
+        MenuEntity menuEntity = modelMapper.map(tObject, MenuEntity.class);
+        return menuEntity;
     }
 
     @Override

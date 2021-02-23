@@ -1,6 +1,8 @@
-package com.fsoft.client.model;
+package com.fsoft.server.model;
 
 import java.util.List;
+
+import com.fsoft.server.dto.MenuDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,18 +11,15 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MenuModel {
-	
-	private Long id;
-	
-	private String name;
-	
-	private Long parentId;
-	
-	private String icon;
-	
-	private String url;
-	
-	private List<MenuModel> children;
+public class JavaModel {
 
+	private Long id;
+
+	private String name;
+
+	private String icon;
+
+	private String url;
+
+	private List<MenuDto> children;
 }

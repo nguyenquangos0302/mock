@@ -1,5 +1,7 @@
 package com.fsoft.server.dto;
 
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 import lombok.AllArgsConstructor;
@@ -19,6 +21,6 @@ public class MenuDto {
 
     private String url;
     
-    private Set<MenuDto> children;
+    private List<MenuDto> children;
 
 }

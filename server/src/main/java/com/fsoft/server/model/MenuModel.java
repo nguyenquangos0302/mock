@@ -14,6 +14,8 @@ public class MenuModel {
 
     private String name;
 
+    private Long parentId;
+
     private String icon;
 
     private String url;
@@ -30,14 +32,4 @@ public class MenuModel {
     
     private Set<MenuModel> menus;
 
-    public MenuModel(String name, String url) {
-        this.name = name;
-        this.url = url;
-    }
-
-    public MenuModel(Long id, String name, String url) {
-        this.id = id;
-        this.name = name;
-        this.url = url;
-    }
 }

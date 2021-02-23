@@ -1,11 +1,13 @@
 package com.fsoft.server.entity;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -25,7 +27,8 @@ public class MenuEntity extends BaseEntity {
     
     @OneToMany(mappedBy = "parent")
     @JsonManagedReference
-    private Set<MenuEntity> children;
+    @OrderBy
+    private List<MenuEntity> children;
 
     @ManyToOne
     @JsonBackReference
@@ -36,5 +39,7 @@ public class MenuEntity extends BaseEntity {
 
     @Column(name = "url", columnDefinition = "varchar(200)", unique = true)
     private String url;
+    
+    
     
 }

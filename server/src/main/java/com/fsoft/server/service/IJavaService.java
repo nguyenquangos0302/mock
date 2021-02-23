@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.fsoft.server.dto.MenuDto;
+import com.fsoft.server.model.JavaModel;
 
 @Service
-public interface IMenuService {
-
-    List<MenuDto> findAll();
+public interface IJavaService {
+	
+	List<JavaModel> findByUrl(String url);
 
 }

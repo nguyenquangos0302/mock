@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.fsoft.server.convert.impl.MenuDtoAndEntityConvert;
@@ -22,7 +23,7 @@ public class MenuService implements IMenuService {
     private final IMenuRepository menuRepository;
 
     @Override
-    public List<MenuDto> finalAll() {
+    public List<MenuDto> findAll() {
     	
     	List<MenuEntity> listMenuEntities = menuRepository.findAll()
     													  .stream()

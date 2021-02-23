@@ -9,18 +9,18 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MenuModel {
-	
-	private Long id;
-	
-	private String name;
-	
-	private Long parentId;
-	
-	private String icon;
-	
-	private String url;
-	
-	private List<MenuModel> children;
+public class JavaModel {
 
+	private Long id;
+
+	private String name;
+
+	private Long parentId;
+
+	private String icon;
+
+	private String url;
+
+	private List<MenuModel> children;
+	
 }
