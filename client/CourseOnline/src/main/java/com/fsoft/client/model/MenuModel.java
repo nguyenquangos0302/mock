@@ -1,5 +1,7 @@
 package com.fsoft.client.model;
 
+import java.util.Set;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class NavigationModel {
+public class MenuModel {
 	
 	private Long id;
 	
@@ -18,5 +20,7 @@ public class NavigationModel {
 	private String icon;
 	
 	private String url;
+	
+	private Set<MenuModel> children;
 
 }
