@@ -18,7 +18,7 @@ public class MenuApi {
 
     private final IMenuService menuService;
 
-    @GetMapping("/navigation")
+    @GetMapping("/menu")
     public List<MenuDto> findAll() {
         return menuService.finalAll();
     }
