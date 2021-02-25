@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.fsoft.server.convert.IConvertModelAndEntityData;
 import com.fsoft.server.entity.MenuEntity;
 import com.fsoft.server.model.BreadCrumbModel;
-import com.fsoft.server.model.MenuModel;
 
 public class BreadCrumbModelAndEntityConvert implements IConvertModelAndEntityData<BreadCrumbModel, MenuEntity> {
 	

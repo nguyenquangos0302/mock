@@ -33,13 +33,14 @@ public class MenuEntity extends BaseEntity {
     @ManyToOne
     @JsonBackReference
     private MenuEntity parent;
+    
+    @OneToMany(mappedBy = "menu")
+    private List<PostEntity> posts;
 
     @Column(name = "icon", columnDefinition = "varchar(255) default 'fas fa-air-freshener'")
     private String icon;
 
     @Column(name = "url", columnDefinition = "varchar(200)", unique = true)
     private String url;
-    
-    
     
 }

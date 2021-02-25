@@ -40,13 +40,13 @@ async function renderMenu() {
         li.classList.add('nav__li');
         //li.innerHTML = menuTree(element);
 
-        li.innerHTML = `<a href="${dataPath.path}${element.url}">${element.name}</a>`;
+        li.innerHTML = `<a href="${dataPath.path}${element.url}"><i class="${element.icon}" style="margin-right: 5px;"></i>${element.name}</a>`;
         if (element.children.length > 0) {
             element.children.forEach(el => {
                 let liSub = document.createElement('li');
                 liSub.classList.add("nav__li");
                 liSub.innerHTML = '';
-                liSub.innerHTML = `<a href="${dataPath.path}${el.url}">${el.name}</a>`;
+                liSub.innerHTML = `<a href="${dataPath.path}${el.url}"><i class="${el.icon}" style="margin-right: 5px;"></i>${el.name}</a>`;
                 ulSub.appendChild(liSub);
                 divSub.appendChild(ulSub);
             })

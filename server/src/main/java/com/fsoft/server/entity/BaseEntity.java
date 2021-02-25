@@ -1,5 +1,6 @@
 package com.fsoft.server.entity;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -34,8 +35,8 @@ public abstract class BaseEntity {
     private String modifiedBy;
 
     @Column(name = "createddate", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private LocalDate createdDate;
+    private Timestamp createdDate;
 
     @Column(name = "modifieddate", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private LocalDate modifiedDate;
+    private Timestamp modifiedDate;
 }

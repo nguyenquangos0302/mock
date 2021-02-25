@@ -1,11 +1,11 @@
 package com.fsoft.server.convert.impl;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.fsoft.server.convert.IConvertDtoAndEntityData;
 import com.fsoft.server.dto.MenuDto;
 import com.fsoft.server.entity.MenuEntity;
-import com.fsoft.server.model.MenuModel;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class MenuDtoAndEntityConvert implements IConvertDtoAndEntityData<MenuDto, MenuEntity> {
 

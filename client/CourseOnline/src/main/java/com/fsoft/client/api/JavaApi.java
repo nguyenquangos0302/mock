@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.fsoft.client.model.JavaModel;
+import com.fsoft.client.model.CourseModel;
 
 import reactor.core.publisher.Flux;
 
@@ -25,8 +25,8 @@ public class JavaApi {
 	}
 
 	@GetMapping("/java")
-	public Flux<JavaModel> findByUrl() {
-		return webClient.get().uri("/server/api/v1/java").retrieve().bodyToFlux(JavaModel.class);
+	public Flux<CourseModel> findByUrl() {
+		return webClient.get().uri("/server/api/v1/java").retrieve().bodyToFlux(CourseModel.class);
 	}
 
 }

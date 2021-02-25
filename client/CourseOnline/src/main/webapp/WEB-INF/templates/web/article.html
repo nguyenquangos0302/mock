@@ -10,45 +10,39 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 <link rel="stylesheet" href="resources/static/web/css/style.css">
+<link rel="stylesheet" href="resources/static/web/css/nav.css">
 <body>
 
 	<!-- header  -->
 	<div th:replace="common/web/header :: header"></div>
 	<!-- nav  -->
 	<div th:replace="common/web/nav :: nav"></div>
-	
+
 	<div class="container">
-		
+
 		<h2 class="breadcrumb"></h2>
-		
+
 	</div>
-	
-	<section>
-		
-		<article>
-			
-			<div>
-				<h2>Java Core</h2>
+
+	<div class="container" style="z-index: -1; margin-top: 10px">
+
+		<div class="card">
+			<div class="card__title">
+				
 			</div>
-			
-			<div>
-				<h2>
-					Java 8
-				</h2>
+			<div class="card-body">
+
+				<div class="section"></div>
+
 			</div>
-			
-			<div>
-				<h2>Java Advance</h2>
-			</div>
-			
-		</article>
-		
-	</section>
-	
+		</div>
+
+	</div>
+
 	<!-- footer  -->
 	<div th:replace="common/web/footer :: footer"></div>
 
 </body>
-	<script type="text/javascript" src="resources/static/web/js/menu.js"></script>
-	<script type="text/javascript" src="resources/static/web/js/article.js"></script>
+<script type="text/javascript" src="resources/static/web/js/menu.js"></script>
+<script type="text/javascript" src="resources/static/web/js/article.js"></script>
 </html>
