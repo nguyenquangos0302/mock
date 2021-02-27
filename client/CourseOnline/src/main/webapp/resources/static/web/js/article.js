@@ -1,12 +1,13 @@
 let urlPath = window.location.href;
 let pathUrl = urlPath.split('/');
 pathUrl = "/" + pathUrl[pathUrl.length - 1];
+let count = 0;
 
 const convertTimeStampToData = (data) => {
     return new Date((data / 1000 + 25200) * 1000)
-      .toISOString()
-      .slice(0, 19)
-      .replace('T', ' ');
+        .toISOString()
+        .slice(0, 19)
+        .replace('T', ' ');
 };
 
 const renderBreadCrumb = (data, path) => {
@@ -36,7 +37,7 @@ async function getBreadCrumb(pathData) {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({url: pathUrl})
+        body: JSON.stringify({ url: pathUrl })
     });
 
     let breadcrumbData = await rawResponse.json();
@@ -52,29 +53,54 @@ const contentByArticle = async data => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({name: data.name})
+        body: JSON.stringify({ name: data.name })
     });
 
     let articleData = await rawResponse.json();
+
+    return articleData;
 }
 
-const templateArticle = async article => {
+const templatePost = datas => {
+
+    let teamplate = '';
+
+    datas.forEach(data => {
+        teamplate +=    `<div class="card">
+                            <a href="${data.url}" style="display: inline-block"><img src="${data.postImage}" class="card-img-top" width="250px" height="250px"></a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="${data.url}">${data.name}</a>
+                                </h5>
+                                <p class="card-text">${data.shortDescription}</p>
+                                </div>
+                        </div>`;
+    })
+
+    console.log(teamplate);
+
+    return teamplate;
+}
+
+const templateArticle = async (article) => {
 
     let content = await contentByArticle(article);
 
-    return `<div class="card" style="margin: 10px 0;">
-                <div class="card-header">${article.name}</div>
-                <div class="card-body">
-                    <h5 class="card-title">loream</h5>
-                    <p class="card-text">With supporting text below as a natural
-                        lead-in to additional content.</p>
-                    
-                </div>
-                <div class="card-footer text-center text-muted">
-                    <a href="#" class="btn btn-link btn-sm">View more</a>
-                </div>
-                
-            </div>`;
+    teamplate = `<div class="card" style="margin: 10px 0;">
+                    <div class="card-header">${article.name}</div>
+                    <div class="card-body">
+                        <div class="slick-slider">
+                            ${templatePost(content)}
+                        </div>
+                    </div>
+                    <div class="card-footer text-center text-muted">
+                        <a href="#" class="btn btn-link btn-sm">View more</a>
+                    </div>
+                </div>`;
+
+    count++;
+
+    return teamplate;
 }
 
 const getTitleArticle = data => {
@@ -103,10 +129,10 @@ async function getDataArticle() {
     cardTitle.innerHTML = '';
 
     cardTitle.innerHTML = getTitleArticle(articleData[0]);
-    
-    articleData.forEach(article => {
 
-        article.children.forEach(async element => {
+    await articleData.forEach(async article => {
+
+        await article.children.forEach(async (element) => {
             const sectionArticle = document.createElement('section');
             const artitlePost = document.createElement('article');
 
@@ -114,9 +140,40 @@ async function getDataArticle() {
             sectionArticle.appendChild(artitlePost);
 
             section.appendChild(sectionArticle);
-        })
 
+            if (count === article.children.length) {
+
+                $(`.slick-slider`).slick({
+                    centerMode: true,
+                    slidesToShow: 3,
+                    //dots: true,
+                    arrows: true,
+                    swipe: true,
+                    swipeToSlide: true,
+                    //adaptiveHeight: true,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    pauseOnFocus: true,
+                    pauseOnHover: true,
+                    cssEase: 'linear'
+                });
+
+                const slick_prev = document.querySelectorAll(".slick-prev");
+                const slick_next = document.querySelectorAll(".slick-next");
+
+                for (let i = 0; i < count; i++) {
+                    slick_prev[i].innerHTML = "";
+                    slick_next[i].innerHTML = "";
+                }
+
+            }
+
+        })
     })
+
 }
+
+//success factory
 
 getDataArticle();

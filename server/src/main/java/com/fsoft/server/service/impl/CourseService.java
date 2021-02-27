@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import com.fsoft.server.convert.impl.CourseModelAndEntityConvert;
 import com.fsoft.server.entity.MenuEntity;
 import com.fsoft.server.model.CourseModel;
-import com.fsoft.server.model.JavaModel;
 import com.fsoft.server.repository.ICourseRepository;
 import com.fsoft.server.service.ICourseService;
 
