@@ -35,7 +35,7 @@ public class MenuEntity extends BaseEntity {
     private MenuEntity parent;
     
     @OneToMany(mappedBy = "menu")
-    private List<PostEntity> posts;
+    private List<TopicEntity> topic;
 
     @Column(name = "icon", columnDefinition = "varchar(255) default 'fas fa-air-freshener'")
     private String icon;

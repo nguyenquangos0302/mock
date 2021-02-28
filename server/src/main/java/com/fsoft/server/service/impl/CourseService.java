@@ -22,8 +22,8 @@ public class CourseService implements ICourseService {
 	private final ICourseRepository javaRepository;
 	
 	@Override
-	public List<CourseModel> findByUrl(String url) {
-		List<MenuEntity> listMenuEntities = javaRepository.findByUrl(url).stream()
+	public List<CourseModel> findAllCourseByUrl(CourseModel postModel) {
+		List<MenuEntity> listMenuEntities = javaRepository.findAllCourseByUrl(postModel.getUrl()).stream()
 				.filter(menu -> Objects.isNull(menu.getParent())).collect(Collectors.toList());
 
 		List<CourseModel> list = new ArrayList<CourseModel>();
@@ -37,9 +37,8 @@ public class CourseService implements ICourseService {
 	}
 
 	@Override
-	public List<CourseModel> findAllByURL(String url) {
-		
-		List<MenuEntity> listMenuEntities = javaRepository.findByUrl(url).stream()
+	public List<CourseModel> findAllCourse() {
+		List<MenuEntity> listMenuEntities = javaRepository.findAllCourse().stream()
 				.filter(menu -> Objects.isNull(menu.getParent())).collect(Collectors.toList());
 
 		List<CourseModel> list = new ArrayList<CourseModel>();

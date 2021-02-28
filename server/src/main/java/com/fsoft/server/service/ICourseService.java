@@ -5,13 +5,11 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.fsoft.server.model.CourseModel;
-import com.fsoft.server.model.JavaModel;
 
 @Service
 public interface ICourseService {
 	
-	List<CourseModel> findByUrl(String url);
-	
-	List<CourseModel> findAllByURL(String url);
+	List<CourseModel> findAllCourseByUrl(CourseModel postModel);
 
+    List<CourseModel> findAllCourse();
 }

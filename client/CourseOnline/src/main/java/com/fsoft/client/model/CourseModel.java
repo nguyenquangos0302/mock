@@ -24,10 +24,10 @@ public class CourseModel {
 
 	private String url;
 
+	private List<CourseModel> children;
+	
 	private Timestamp modifiedDate;
 
 	private String modifiedBy;
-
-	private List<CourseModel> children;
 
 }

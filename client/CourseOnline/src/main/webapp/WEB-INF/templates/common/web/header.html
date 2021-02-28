@@ -5,40 +5,46 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<header class="container-fluid header" th:fragment="header">
-		<div class="container-fluid header__main">
-			<div class="container header__component">
-				<div class="header__logo">
-					<a href="#"> <i class="fas fa-leaf header__icon"></i>
-					</a>
-				</div>
-				<div class="header__search">
-					<form>
-						<input type="text" class="form-control header__form"
-							placeholder="Search ..." />
-					</form>
-					<span> <i
-						class="fas fa-search header__icon header__icon--search"></i>
-					</span>
-				</div>
-				<div class="header__social">
-					<ul>
-						<li><a href="#" class="header__social-link"> <i
-								class="fab fa-facebook-f header__icon header__icon--social"></i>
-						</a></li>
-						<li><a href="#" class="header__social-link"> <i
-								class="fab fa-youtube header__icon header__icon--social"></i>
-						</a></li>
-						<li><a href="#" class="header__social-link"> <i
-								class="fab fa-twitter header__icon header__icon--social"></i>
-						</a></li>
-						<li><a href="#" class="header__social-link"> <i
-								class="fab fa-skype header__icon header__icon--social"></i>
-						</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</header>
+	<header class="header">
+        <div class="inner">
+            <div class="logo">
+                                <a th:href="@{/}" title="freetuts">
+                    <img src="https://freetuts.net/public/logo/logo.png?rand=5" alt="freetuts" style="max-width: 160px; margin-top: -10px">
+                </a>
+                            </div>
+            <div class="header-right ">
+                <div class="mom-e3lanat-wrap">
+                    <div class="mom-e3lanat">
+                        <div class="mom-e3lanat-inner">
+                            <div class="mom-e3lan">
+                                <div class="e3lan-code">
+                                    <div class="social-header">
+                                        <ul class="mom-social-icons">
+                                            <li class="facebook"><a class="vector_icon" href="https://www.facebook.com/freetuts/" target="_blank" rel="noopener noreferrer nofollow external" title="no title"><i class="fa-icon-facebook "></i></a></li>
+                                            <li class="youtube"><a class="vector_icon" href="https://www.youtube.com/channel/UC0jGwW2AfbsGbuY_Z3jtkAg" target="_blank" rel="noopener noreferrer nofollow external" title="UC0jGwW2AfbsGbuY Z3jtkAg"><i class="fa-icon-youtube"></i></a></li>
+                                            <li class="twitter"><a class="vector_icon" href="https://twitter.com/freetuts_net" target="_blank" rel="noopener noreferrer nofollow external" title="freetuts net"><i class="fa-icon-twitter"></i></a></li>
+                                            <li class="skype"><a target="_blank" class="vector_icon" href="skype:thehalfheart?call" title="skype thehalfheart call"><i class="fa-icon-skype"></i></a></li>
+                                         
+                                         </ul>
+                                    </div>
+                                    
+                                    <div class="search-form default-search-form ">
+                                        <form method="get" action="https://www.google.com.vn/search" target="_blank" onsubmit="jQuery('#q1').val('site:freetuts.net ' + jQuery('#q_tmp').val())"> 
+                                            <input class="sf" type="text" placeholder="Search ..." value="" onkeypress="" autocomplete="off" id="q_tmp"> 
+                                             <input type="hidden" name="q" id="q1" value="">
+                                            <button class="button" type="submit"><i class="fa-icon-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        
+    </header>
 </body>
 </html>

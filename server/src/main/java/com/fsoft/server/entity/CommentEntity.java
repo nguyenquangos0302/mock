@@ -22,11 +22,5 @@ public class CommentEntity extends BaseEntity{
 	
 	@Column(name = "body", columnDefinition = "TEXT")
 	private String body;
-	
-	@ManyToOne
-	@JoinColumn(name = "article_id")
-	private ArticleEntity article;
-	
-
 
 }

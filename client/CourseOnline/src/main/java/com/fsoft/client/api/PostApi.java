@@ -2,6 +2,8 @@ package com.fsoft.client.api;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,7 @@ import reactor.core.publisher.Flux;
 
 @RestController
 @RequestMapping("/client/api/v1")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostApi {
 	
 	WebClient webClient;
@@ -25,7 +28,6 @@ public class PostApi {
 	
 	@PostMapping("/post")
 	public Flux<PostModel> findByName(@RequestBody PostModel postModel) {
-		System.out.println(postModel.getName());
 		return webClient
 						.post()
 						.uri("/server/api/v1/post")

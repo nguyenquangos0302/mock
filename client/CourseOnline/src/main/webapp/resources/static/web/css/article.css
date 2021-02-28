@@ -1,3 +1,8 @@
+.card__block {
+	width: 400px !important;
+	height: 400px;
+}
+
 .slick-slider {
   background-color: transparent;
   overflow: hidden;

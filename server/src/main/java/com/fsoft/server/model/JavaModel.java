@@ -2,8 +2,6 @@ package com.fsoft.server.model;
 
 import java.util.List;
 
-import com.fsoft.server.dto.MenuDto;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +19,5 @@ public class JavaModel {
 
 	private String url;
 
-	private List<MenuDto> children;
+	//private List<MenuDto> children;
 }

@@ -2,11 +2,11 @@ package com.fsoft.server.api;
 
 import java.util.List;
 
+import com.fsoft.server.model.MenuModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fsoft.server.dto.MenuDto;
 import com.fsoft.server.service.IMenuService;
 
 import lombok.AllArgsConstructor;
@@ -19,7 +19,7 @@ public class MenuApi {
     private final IMenuService menuService;
 
     @GetMapping("/menu")
-    public List<MenuDto> findAll() {
+    public List<MenuModel> findAll() {
         return menuService.findAll();
     }
 

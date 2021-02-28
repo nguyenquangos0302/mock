@@ -2,6 +2,7 @@ package com.fsoft.client.api;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/client/api/v1")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BreadCrumbApi {
 
 	WebClient webClient;
