@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.fsoft.client.model.TopicModel;
+import com.fsoft.client.model.TopicPagingModel;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/client/api/v1")
@@ -27,13 +29,13 @@ public class TopicApi {
 	}
 	
 	@PostMapping("/topic/pagination")
-	public Flux<TopicModel> findAllCourse(@RequestBody TopicModel topicModel, @RequestParam("limit") int limit, @RequestParam("offset") int offset) {
+	public Mono<TopicPagingModel> findAllTopicByNameAndUsingPaging(@RequestBody TopicModel topicModel, @RequestParam("page") int page) {
 		return webClient
 						.post()
-						.uri("/server/api/v1/topic/pagination?limit="+limit+"&offset="+offset)
+						.uri("/server/api/v1/topic/pagination?page="+page)
 						.bodyValue(topicModel)
 						.retrieve()
-						.bodyToFlux(TopicModel.class);
+						.bodyToMono(TopicPagingModel.class);
 	}
 
 }

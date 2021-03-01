@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class TopicController {
 	
 	@GetMapping("/{param}")
-	public ModelAndView getCourse(Model model, @PathVariable(value = "param") String param) {
+	public ModelAndView getCourse(Model model) {
 		ModelAndView mav = new ModelAndView("web/topic");
 		return mav;
 	}

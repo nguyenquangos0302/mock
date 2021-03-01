@@ -5,8 +5,13 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import com.fsoft.server.convert.impl.CategoryModelAndEntityConvert;
 import com.fsoft.server.convert.impl.MenuModelAndEntityConvert;
+import com.fsoft.server.convert.impl.TopicModelAndEntityConvert;
+import com.fsoft.server.model.CategoryModel;
 import com.fsoft.server.model.MenuModel;
+import com.fsoft.server.model.TopicModel;
+
 import org.springframework.stereotype.Service;
 
 import com.fsoft.server.entity.MenuEntity;
@@ -38,4 +43,16 @@ public class MenuService implements IMenuService {
         
         return list;
     }
+
+	@Override
+	public List<CategoryModel> findAllMenuByParentIdIsNotNull() {
+		// TODO Auto-generated method stub
+		 List<CategoryModel> list = new ArrayList<CategoryModel>();
+
+	        list = menuRepository.findAllMenuByParentIdIsNotNull().stream()
+	                .map(element -> new CategoryModelAndEntityConvert().convertToModel(element))
+	                .collect(Collectors.toList());
+
+	        return list;
+	}
 }

@@ -21,10 +21,6 @@ public class TopicModel {
 
     private String url;
 
-    private int limit;
-
-    private int offset;
-
     private String createdBy;
 
     private Date createdDate;

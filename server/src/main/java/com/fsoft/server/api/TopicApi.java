@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/server/api/v1")
@@ -16,13 +17,8 @@ public class TopicApi {
     private final ITopicService topicService;
 
     @PostMapping("/topic/pagination")
-    public List<TopicModel> findAllTopicByNameAndPaging(@RequestBody TopicModel topicModel, @RequestParam("limit") int limit, @RequestParam("offset") int offset) {
-        return topicService.findAllTopicByNameAndPaging(topicModel, limit, offset);
-    }
-
-    @PostMapping("/topic")
-    public List<TopicModel> findAllTopicByName(@RequestBody TopicModel topicModel) {
-        return topicService.findAllTopicByName(topicModel);
+    public Map<String, Object> findAllTopicByNameAndUsingPaging(@RequestBody TopicModel topicModel, @RequestParam(value = "page") int page) {
+        return topicService.findAllTopicByNameAndUsingPaging(topicModel, page);
     }
 
 }
