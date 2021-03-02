@@ -37,5 +37,15 @@ public class TopicApi {
 						.retrieve()
 						.bodyToMono(TopicPagingModel.class);
 	}
+	
+	@PostMapping("/topic")
+	public Flux<TopicModel> findAllTopicByNameAndTopicHome(@RequestBody TopicModel topicModel) {
+		return webClient
+						.post()
+						.uri("/server/api/v1/topic")
+						.bodyValue(topicModel)
+						.retrieve()
+						.bodyToFlux(TopicModel.class);
+	}
 
 }

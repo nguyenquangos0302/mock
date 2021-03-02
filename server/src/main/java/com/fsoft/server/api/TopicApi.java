@@ -21,4 +21,9 @@ public class TopicApi {
         return topicService.findAllTopicByNameAndUsingPaging(topicModel, page);
     }
 
+    @PostMapping("/topic")
+    public List<TopicModel> findAllTopicByNameAndTopicHome(@RequestBody TopicModel topicModel) {
+        return topicService.findAllTopicByNameAndTopicHome(topicModel);
+    }
+
 }

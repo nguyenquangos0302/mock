@@ -11,10 +11,10 @@ import java.util.Map;
 @Service
 public interface ITopicService {
 
-    List<TopicModel> findAllTopicByNameAndPaging(TopicModel topic, int limit, int offset);
-
-    List<TopicModel> findAllTopicByName(TopicModel topicModel);
+    List<TopicModel> findAllTopicByNameAndTopicHome(TopicModel topic);
 
     Map<String, Object> findAllTopicByNameAndUsingPaging(TopicModel topic, int page);
+
+
 
 }

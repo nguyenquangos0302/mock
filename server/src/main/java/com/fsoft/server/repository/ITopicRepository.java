@@ -16,17 +16,12 @@ public interface ITopicRepository extends JpaRepository<TopicEntity, Long> {
 
     @Query(value = "SELECT * " +
             "FROM topic " +
-            "WHERE menu_id in (SELECT m.id FROM menu as m WHERE m.name like %:name%) AND status = 1 AND topic_home = 1 LIMIT :limit OFFSET :offset", nativeQuery = true )
-    List<TopicEntity> findAllTopicByNameAndPaging(@Param("name") String name, @Param("limit") int limit, @Param("offset") int offset);
-
-    @Query(value = "SELECT * " +
-            "FROM topic " +
-            "WHERE menu_id in (SELECT m.id FROM menu as m WHERE m.name like %:name%) AND status = 1 AND topic_home = 1", nativeQuery = true )
-    List<TopicEntity> findAllTopicByName(@Param("name") String name);
-
-    @Query(value = "SELECT * " +
-            "FROM topic " +
             "WHERE menu_id in (SELECT m.id FROM menu as m WHERE m.name like %:name%) AND status = 1 AND topic_home = 1", nativeQuery = true )
     Page<TopicEntity> findAllTopicByNameAndUsingPaging(String name, Pageable pageable);
+
+    @Query(value = "SELECT * " +
+            "FROM topic " +
+            "WHERE menu_id in (SELECT m.id FROM menu as m WHERE m.name like %:name%) AND status = 1", nativeQuery = true )
+    List<TopicEntity> findAllTopicByNameAndTopicHome(String name);
 
 }

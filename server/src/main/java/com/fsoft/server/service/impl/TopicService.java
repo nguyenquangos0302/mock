@@ -24,21 +24,10 @@ public class TopicService implements ITopicService {
     private final ITopicRepository topicRepository;
 
     @Override
-    public List<TopicModel> findAllTopicByNameAndPaging(TopicModel topic, int limit, int offset) {
+    public List<TopicModel> findAllTopicByNameAndTopicHome(TopicModel topic) {
         List<TopicModel> list = new ArrayList<TopicModel>();
 
-        list = topicRepository.findAllTopicByNameAndPaging(topic.getName(), limit, offset).stream()
-                .map(element -> new TopicModelAndEntityConvert().convertToModel(element))
-                .collect(Collectors.toList());
-
-        return list;
-    }
-
-    @Override
-    public List<TopicModel> findAllTopicByName(TopicModel topicModel) {
-        List<TopicModel> list = new ArrayList<TopicModel>();
-
-        list = topicRepository.findAllTopicByName(topicModel.getName()).stream()
+        list = topicRepository.findAllTopicByNameAndTopicHome(topic.getName()).stream()
                 .map(element -> new TopicModelAndEntityConvert().convertToModel(element))
                 .collect(Collectors.toList());
 
