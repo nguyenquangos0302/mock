@@ -160,7 +160,11 @@ async function renderTopic() {
     }
   );
 
+  console.log(url);
+
   const topicData = await topicRawResponse.json();
+
+  console.log(topicData);
 
   let divIntroduction = document.createElement('div');
   divIntroduction.innerHTML = '';
@@ -207,7 +211,6 @@ async function renderTopic() {
   divArticle.innerHTML += renderArticleHot(paginationData.topic, pathData);
   articleHot.appendChild(divArticle);
 
-
   $('#pagination').twbsPagination('destroy');
 
   $('#pagination').twbsPagination({
@@ -218,7 +221,7 @@ async function renderTopic() {
     prev: 'Prev',
     onPageClick: function (event, page) {
       if (page !== startPage) {
-        window.location.href = `http://localhost:8080/CourseOnline/course/java?page=${page}`;
+        window.location.href = `http://localhost:8080/CourseOnline/course/${urlName}?page=${page}`;
       }
     }
   });

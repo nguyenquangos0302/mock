@@ -1,12 +1,12 @@
 package com.fsoft.server.service;
 
-import com.fsoft.server.model.TopicModel;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.fsoft.server.model.SubTopicModel;
+import com.fsoft.server.model.TopicModel;
 
 @Service
 public interface ITopicService {
@@ -15,6 +15,8 @@ public interface ITopicService {
 
     Map<String, Object> findAllTopicByNameAndUsingPaging(TopicModel topic, int page);
 
-
-
+    List<TopicModel> findRandomArticle(TopicModel topicModel);
+    
+    List<SubTopicModel> findByStatus(int status);
+    
 }

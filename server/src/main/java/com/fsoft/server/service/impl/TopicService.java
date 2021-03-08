@@ -1,21 +1,25 @@
 package com.fsoft.server.service.impl;
 
-import com.fsoft.server.convert.impl.TopicModelAndEntityConvert;
-import com.fsoft.server.entity.TopicEntity;
-import com.fsoft.server.model.TopicModel;
-import com.fsoft.server.repository.ITopicRepository;
-import com.fsoft.server.service.ITopicService;
-import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.fsoft.server.convert.impl.SubTopicModelAndEntityConvert;
+import com.fsoft.server.convert.impl.TopicModelAndEntityConvert;
+import com.fsoft.server.entity.TopicEntity;
+import com.fsoft.server.model.SubTopicModel;
+import com.fsoft.server.model.TopicModel;
+import com.fsoft.server.repository.ITopicRepository;
+import com.fsoft.server.service.ITopicService;
+
+import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
@@ -57,4 +61,25 @@ public class TopicService implements ITopicService {
         return response;
     }
 
+	@Override
+	public List<TopicModel> findRandomArticle(TopicModel topicModel) {
+		List<TopicModel> list = new ArrayList<TopicModel>();
+
+        list = topicRepository.findRandomArticle(topicModel.getName()).stream()
+                .map(element -> new TopicModelAndEntityConvert().convertToModel(element))
+                .collect(Collectors.toList());
+
+        return list;
+	}
+
+
+	@Override
+	public List<SubTopicModel> findByStatus(int status) {
+		List<SubTopicModel> list = new ArrayList<SubTopicModel>();
+
+	    list = topicRepository.findAll().stream()
+	    		.map(element -> new SubTopicModelAndEntityConvert().convertToModel(element))
+                .collect(Collectors.toList());
+	    return list;
+	}
 }

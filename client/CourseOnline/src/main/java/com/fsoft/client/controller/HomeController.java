@@ -15,11 +15,5 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView("web/index");
 		return mav;
 	}
-
-	@GetMapping("/admin")
-	public ModelAndView admin(Model model) {
-		ModelAndView mav = new ModelAndView("admin/index");
-		return mav;
-	}
 }
 	

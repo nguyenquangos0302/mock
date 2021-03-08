@@ -20,7 +20,11 @@ public class CommentEntity extends BaseEntity{
 	@Column(name = "email",  columnDefinition = "varchar(255)")
 	private String email;
 	
-	@Column(name = "body", columnDefinition = "TEXT")
-	private String body;
+	@Column(name = "content", columnDefinition = "TEXT")
+	private String content;
+	
+	@ManyToOne
+	@JoinColumn(name = "article_id")
+	private PostEntity post;
 
 }

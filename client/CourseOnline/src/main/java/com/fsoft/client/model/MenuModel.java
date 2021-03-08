@@ -1,6 +1,9 @@
 package com.fsoft.client.model;
 
+import java.time.LocalDateTime;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +23,8 @@ public class MenuModel {
 	private String icon;
 	
 	private String url;
+	
+	private int status;
 	
 	private List<MenuModel> children;
 

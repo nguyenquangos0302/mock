@@ -1,10 +1,7 @@
 package com.fsoft.server.repository;
 
-import java.sql.Timestamp;
 import java.util.List;
 
-import com.fsoft.server.model.CourseModel;
-import org.hibernate.sql.Select;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,15 +1,16 @@
 package com.fsoft.server.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.Date;
-import java.util.List;
 
-@Data
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class TopicModel {
 
     private Long id;
@@ -25,5 +26,7 @@ public class TopicModel {
     private String createdBy;
 
     private Date createdDate;
+    
+    
 
 }
